@@ -52,7 +52,7 @@ class AsyncResult {
     public function getMessageBody() {
         $message = $this->redis->get(self::TASK_META_PREFIX . $this->task_id);
 
-        if ($message !== false) {
+        if ($message != false) {
             $this->body = json_decode($message);
             return $this->body;
         }
